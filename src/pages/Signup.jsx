@@ -17,20 +17,18 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     console.log("Signup Data:", formData);
-    alert("Signup successful (demo)");
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md border">
+      <div className="bg-white w-full max-w-xs p-5 rounded-xl shadow-lg border border-gray-200">
 
-        <h2 className="text-2xl font-bold text-center mb-6">
+        <h2 className="text-lg font-bold text-center text-gray-800 mb-4">
           Create Account
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-3">
 
           {/* Name */}
           <input
@@ -39,7 +37,8 @@ const Signup = () => {
             placeholder="Full Name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400"
+            className="w-full px-3 py-1.5 border border-gray-300 rounded-lg
+                       focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
             required
           />
 
@@ -50,7 +49,8 @@ const Signup = () => {
             placeholder="Email Address"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400"
+            className="w-full px-3 py-1.5 border border-gray-300 rounded-lg
+                       focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
             required
           />
 
@@ -61,7 +61,8 @@ const Signup = () => {
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400"
+            className="w-full px-3 py-1.5 border border-gray-300 rounded-lg
+                       focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
             required
           />
 
@@ -70,7 +71,8 @@ const Signup = () => {
             name="role"
             value={formData.role}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400"
+            className="w-full px-3 py-1.5 border border-gray-300 rounded-lg
+                       focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
             required
           >
             <option value="">Select Role</option>
@@ -81,7 +83,8 @@ const Signup = () => {
           {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-blue-700 text-white py-2 rounded-lg hover:bg-blue-800 transition font-semibold"
+            className="w-full bg-blue-900 text-white py-1.5 rounded-lg
+                       hover:bg-blue-800 transition font-semibold text-sm"
           >
             Sign Up
           </button>
@@ -89,9 +92,9 @@ const Signup = () => {
         </form>
 
         {/* Login link */}
-        <p className="text-center text-sm text-gray-500 mt-4">
+        <p className="text-center text-xs text-gray-500 mt-3">
           Already have an account?{" "}
-          <a href="/login" className="text-blue-700 font-medium">
+          <a href="/login" className="text-blue-900 font-medium hover:underline">
             Login
           </a>
         </p>

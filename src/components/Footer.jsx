@@ -1,12 +1,12 @@
 const Footer = () => {
   return (
-    <footer className="bg-blue-800 text-white mt-20">
+    <footer className="bg-blue-900 text-white mt-20">
       
       <div className="max-w-7xl mx-auto px-8 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         
         {/* Company Info */}
         <div>
-          <h3 className="text-lg font-bold mb-3">KodeBloom</h3>
+          <h3 className="text-lg font-bold mb-3">KodeBloom Technology</h3>
           <p className="text-sm text-blue-100">
             KodeBloom is a technology platform focused on building
             modern web applications and digital solutions.
