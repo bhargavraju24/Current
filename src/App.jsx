@@ -1,34 +1,45 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 
+// Pages
 import Home from "./pages/Home";
 import SelectRole from "./pages/SelectRole";
-import AdminLogin from "./pages/AdminLogin";
-import EmployeeLogin from "./pages/EmployeeLogin";
-import Signup from "./pages/Signup";
 
+// Auth
+import AdminLogin from "./auth/AdminLogin";
+import EmployeeLogin from "./auth/EmployeeLogin";
+import Signup from "./auth/Signup";
 
-import AdminDashboard from "./admindashboard/Admin_Dashboard";
-import EmployeeDashboard from "./employeedashboard/Employee_Dashboard";
+// Admin
+import AdminDashboard from "./admin/AdminDashboard";
+import CreateEmployee from "./admin/CreateEmployee";
+import ManageEmployee from "./admin/ManageEmployee";
 
+// Employee
+import EmployeeDashboard from "./employee/EmployeeDashboard";
+import EmployeeProfile from "./employee/EmployeeProfile";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-
       <Routes>
+        {/* Public */}
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<SelectRole />} />
-        <Route path="/login/admin" element={<AdminLogin />} />
-        <Route path="/login/employee" element={<EmployeeLogin />} />
-         <Route path="/signup" element={<Signup />} />
-         <Route path="/admin-dashboard" element={<AdminDashboard />} />
-         <Route path="/employee-dashboard" element={<EmployeeDashboard />} />
-      </Routes>
+        <Route path="/select-role" element={<SelectRole />} />
 
-      <Footer />
+        {/* Auth */}
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/employee-login" element={<EmployeeLogin />} />
+        <Route path="/signup" element={<Signup />} />
+
+        {/* Admin */}
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/create-employee" element={<CreateEmployee />} />
+        <Route path="/admin/manage-employee" element={<ManageEmployee />} />
+
+        {/* Employee */}
+        <Route path="/employee-dashboard" element={<EmployeeDashboard />} />
+        <Route path="/employee/profile" element={<EmployeeProfile />} />
+      </Routes>
     </BrowserRouter>
   );
 }
